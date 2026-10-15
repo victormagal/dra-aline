@@ -2,31 +2,117 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TabBar } from '../shared/tab-bar';
 
+const EXAMES_STYLES = `
+  :host { display: block; min-height: 100%; }
+
+  .head { padding: 60px 16px 8px; display: flex; flex-direction: column; gap: 4px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--brand-primary);
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700; font-size: 32px; line-height: 1; color: var(--text); margin: 0;
+  }
+
+  .content {
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 8px 16px calc(var(--safe-bottom) + 96px);
+  }
+
+  .seg {
+    display: flex; gap: 4px; background: var(--white);
+    border-radius: 14px; padding: 4px; margin: 0;
+  }
+  .seg a {
+    flex: 1; text-align: center; padding: 10px 8px; border-radius: 10px;
+    font-size: 13px; font-weight: 700; color: var(--muted);
+  }
+  .seg a.active { background: var(--brand-primary); color: var(--white); }
+
+  .card {
+    margin: 0; background: var(--white); border-radius: 20px; padding: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--brand-primary);
+  }
+  .body { font-size: 14px; color: var(--text); }
+
+  /* Janelas de coleta */
+  .marco { display: flex; gap: 12px; align-items: flex-start; }
+  .marco .dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; flex: none; }
+  .marco .t { font-size: 14px; font-weight: 700; color: var(--text); }
+  .marco .s { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* Resultados */
+  .tri {
+    display: flex; gap: 4px; background: var(--white);
+    border-radius: 14px; padding: 4px;
+  }
+  .tri span {
+    flex: 1; text-align: center; padding: 8px; border-radius: 10px;
+    font-size: 13px; font-weight: 700; color: var(--muted);
+  }
+  .tri span.active { background: var(--brand-primary); color: var(--white); }
+
+  .tcard { background: var(--white); border-radius: 20px; padding: 10px; }
+  .trow {
+    display: grid;
+    grid-template-columns: 132px 1fr 1fr 1fr;
+    gap: 6px;
+    padding: 11px 4px;
+    align-items: start;
+  }
+  .thead {
+    padding: 6px 4px 8px;
+    font-size: 9px; font-weight: 700; color: var(--brand-primary);
+    text-transform: uppercase;
+  }
+  .trow > span { font-size: 11px; color: var(--text); }
+  .trow > span:first-child { font-weight: 500; }
+  .trow + .trow { border-top: 1px solid #f3e9ee; }
+  .obs { font-size: 12px; color: var(--muted); }
+`;
+
 @Component({
   selector: 'app-exames-resultados',
   imports: [RouterLink, RouterLinkActive, TabBar],
+  styles: EXAMES_STYLES,
   template: `
-    <div class="phone-inner">
-      <div class="topbar"><div><p class="eyebrow">Exames laboratoriais</p><h1 style="margin-top:4px">Por trimestre</h1></div></div>
-      <div class="screen">
-        <nav class="seg">
-          <a routerLink="/exames/resultados" routerLinkActive="active">Resultados</a>
-          <a routerLink="/exames/janelas" routerLinkActive="active">Janelas de coleta</a>
-        </nav>
-        <div class="table-wrap">
-          <table class="exams">
-            <thead><tr><th>Exame</th><th>1º tri</th><th>2º tri</th><th>3º tri</th></tr></thead>
-            <tbody>
-              @for (r of rows; track r[0]) {
-                <tr><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[2] }}</td><td>{{ r[3] }}</td></tr>
-              }
-            </tbody>
-          </table>
-        </div>
-        <p class="muted" style="margin:8px 16px; font-size:12px">Alguns exames do 3º trimestre foram refeitos em 04/09/2026.</p>
-      </div>
-      <app-tab-bar />
-    </div>
+    <header class="head">
+      <p class="eyebrow">Exames laboratoriais</p>
+      <h1>Por trimestre</h1>
+    </header>
+
+    <main class="content">
+      <nav class="seg">
+        <a routerLink="/exames/janelas" routerLinkActive="active">Janelas de coleta</a>
+        <a routerLink="/exames/resultados" routerLinkActive="active">Resultados</a>
+      </nav>
+
+      <nav class="tri">
+        <span class="active">1º tri</span>
+        <span>2º tri</span>
+        <span>3º tri</span>
+      </nav>
+
+      <section class="tcard">
+        <div class="trow thead"><span>Exame</span><span>1º tri</span><span>2º tri</span><span>3º tri</span></div>
+        @for (r of rows; track r[0]) {
+          <div class="trow">
+            <span>{{ r[0] }}</span><span>{{ r[1] }}</span><span>{{ r[2] }}</span><span>{{ r[3] }}</span>
+          </div>
+        }
+      </section>
+
+      <section class="card">
+        <p class="obs">Alguns exames do 3º trimestre foram refeitos em 04/09/2026.</p>
+      </section>
+    </main>
+
+    <app-tab-bar />
   `,
 })
 export class ExamesResultados {
@@ -77,29 +163,50 @@ export class ExamesResultados {
 @Component({
   selector: 'app-exames-janelas',
   imports: [RouterLink, RouterLinkActive, TabBar],
+  styles: EXAMES_STYLES,
   template: `
-    <div class="phone-inner">
-      <div class="topbar"><div><p class="eyebrow">Exames laboratoriais</p><h1 style="margin-top:4px">Janelas de coleta</h1></div></div>
-      <div class="screen">
-        <nav class="seg">
-          <a routerLink="/exames/resultados" routerLinkActive="active">Resultados</a>
-          <a routerLink="/exames/janelas" routerLinkActive="active">Janelas de coleta</a>
-        </nav>
-        <p class="muted" style="margin:0 16px 16px">Durante a gestação realizamos ao menos 3 avaliações laboratoriais (1º, 2º e 3º trimestre): nutrição, hormônios e sorologias.</p>
-        <p class="section-title">Calendário de exames</p>
-        <div class="list">
-          <div class="row"><div><p class="eyebrow">A partir de 8 semanas</p><p>Sexagem fetal (opcional, sangue materno)</p></div></div>
-          <div class="row"><div><p class="eyebrow">11 semanas</p><p>Perfil bioquímico materno: PAPP-A e fração livre do βhCG</p></div></div>
-          <div class="row"><div><p class="eyebrow">24 a 26 semanas</p><p>TOTG (teste oral de tolerância à glicose). Indispensável</p></div></div>
-          <div class="row"><div><p class="eyebrow">35 a 37 semanas</p><p>Exame do cotonete: pesquisa de Streptococcus agalactiae</p></div></div>
+    <header class="head">
+      <p class="eyebrow">Exames laboratoriais</p>
+      <h1>Janelas de coleta</h1>
+    </header>
+
+    <main class="content">
+      <nav class="seg">
+        <a routerLink="/exames/janelas" routerLinkActive="active">Janelas de coleta</a>
+        <a routerLink="/exames/resultados" routerLinkActive="active">Resultados</a>
+      </nav>
+
+      <section class="card">
+        <p class="body">Durante a gestação realizamos ao menos 3 avaliações laboratoriais (1º, 2º e 3º trimestre): nutrição, hormônios e sorologias.</p>
+      </section>
+
+      <section class="card">
+        <p class="label">Calendário de exames</p>
+        <div class="marco">
+          <span class="dot" style="background: var(--magenta)"></span>
+          <div><p class="t">A partir de 8 semanas</p><p class="s">Sexagem fetal (opcional, sangue materno)</p></div>
         </div>
-        <div class="card" style="background:var(--soft); margin-top:16px">
-          <p class="eyebrow">Preparo · TOTG</p>
-          <p style="margin-top:6px">Chegar ao laboratório pela manhã, em jejum de 8 a 12 horas. Ingerir 300 ml de dextrosol e coletar nova amostra após 60 e 120 minutos.</p>
+        <div class="marco">
+          <span class="dot" style="background: var(--magenta)"></span>
+          <div><p class="t">11 semanas</p><p class="s">Perfil bioquímico materno: PAPP-A e fração livre do βhCG</p></div>
         </div>
-      </div>
-      <app-tab-bar />
-    </div>
+        <div class="marco">
+          <span class="dot" style="background: var(--brand-primary)"></span>
+          <div><p class="t">24 a 26 semanas</p><p class="s">TOTG (teste oral de tolerância à glicose). Indispensável</p></div>
+        </div>
+        <div class="marco">
+          <span class="dot" style="background: var(--warn)"></span>
+          <div><p class="t">35 a 37 semanas</p><p class="s">Exame do cotonete: pesquisa de Streptococcus agalactiae</p></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <p class="label">Preparo · TOTG</p>
+        <p class="body">Chegar ao laboratório pela manhã, em jejum de 8 a 12 horas. Ingerir 300 ml de dextrosol e coletar nova amostra após 60 e 120 minutos.</p>
+      </section>
+    </main>
+
+    <app-tab-bar />
   `,
 })
 export class ExamesJanelas {}

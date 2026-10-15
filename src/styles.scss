@@ -83,7 +83,6 @@ button, input { font: inherit; }
   gap: 12px;
 }
 .topbar .back { color: var(--brand-primary); font-weight: 700; font-size: 14px; }
-.topbar img { width: 40px; height: 40px; border-radius: 50%; background: var(--white); padding: 4px; }
 
 .eyebrow {
   font-size: 11px;
@@ -151,27 +150,26 @@ button, input { font: inherit; }
 
 .link { color: var(--brand-primary); font-weight: 700; text-align: center; display: block; margin-top: 10px; }
 
-/* Segmented tabs (top of Consultas, Exames, Ultra) */
+/* Segmented tabs (Figma: contêiner branco, aba ativa preenchida com a cor primária) */
 .seg {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
+  display: flex;
   gap: 4px;
-  background: var(--soft);
+  background: var(--white);
   border-radius: 14px;
   padding: 4px;
   margin: 0 16px 16px;
 }
 .seg a {
+  flex: 1;
   text-align: center;
-  padding: 9px 4px;
+  padding: 10px 8px;
   border-radius: 10px;
   font-size: 13px;
   font-weight: 700;
   color: var(--muted);
   white-space: nowrap;
 }
-.seg a.active { background: var(--white); color: var(--brand-primary); box-shadow: 0 1px 3px rgba(59, 26, 46, 0.12); }
+.seg a.active { background: var(--brand-primary); color: var(--white); }
 
 /* Exam tables */
 .table-wrap { overflow-x: auto; margin: 0 16px 12px; }
@@ -196,7 +194,7 @@ table.exams td:not(:first-child) { white-space: nowrap; }
   border-radius: 50%; background: var(--brand-primary); border: 2px solid var(--cream);
 }
 
-/* Bottom navbar */
+/* Bottom navbar (Figma: branca, 70px incl. 34px de área segura, pílula no item ativo) */
 .tabbar {
   position: fixed;
   bottom: 0;
@@ -204,16 +202,22 @@ table.exams td:not(:first-child) { white-space: nowrap; }
   transform: translateX(-50%);
   width: 100%;
   max-width: 440px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  gap: 4px;
   background: var(--white);
-  border-top: 1px solid #efe1e8;
-  padding: 8px 6px var(--safe-bottom);
+  padding: 10px 8px var(--safe-bottom);
   z-index: 10;
 }
-.tabbar a { text-align: center; font-size: 11px; font-weight: 700; color: var(--muted); padding: 6px 0; }
-.tabbar a.active { color: var(--brand-primary); }
-.tabbar .ico { display: block; font-size: 18px; margin-bottom: 2px; }
+.tabbar a {
+  flex: 1;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 6px 4px;
+  border-radius: 14px;
+}
+.tabbar a.active { background: var(--soft); color: var(--brand-primary); font-weight: 700; }
 @media (min-width: 500px) {
   .tabbar { position: absolute; }
 }
