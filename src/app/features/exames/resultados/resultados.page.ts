@@ -5,38 +5,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'app-exames-resultados',
   imports: [RouterLink, RouterLinkActive],
   styleUrl: '../exames.scss',
-  template: `
-    <header class="head">
-      <p class="eyebrow">Exames laboratoriais</p>
-      <h1>Por trimestre</h1>
-    </header>
-
-    <main class="content">
-      <nav class="seg">
-        <a routerLink="/exames/janelas" routerLinkActive="active">Janelas de coleta</a>
-        <a routerLink="/exames/resultados" routerLinkActive="active">Resultados</a>
-      </nav>
-
-      <nav class="tri">
-        <span class="active">1º tri</span>
-        <span>2º tri</span>
-        <span>3º tri</span>
-      </nav>
-
-      <section class="tcard">
-        <div class="trow thead"><span>Exame</span><span>1º tri</span><span>2º tri</span><span>3º tri</span></div>
-        @for (r of rows; track r[0]) {
-          <div class="trow">
-            <span>{{ r[0] }}</span><span>{{ r[1] }}</span><span>{{ r[2] }}</span><span>{{ r[3] }}</span>
-          </div>
-        }
-      </section>
-
-      <section class="card">
-        <p class="obs">Alguns exames do 3º trimestre foram refeitos em 04/09/2026.</p>
-      </section>
-    </main>
-  `,
+  templateUrl: './resultados.page.html',
 })
 export class ExamesResultados {
   rows: string[][] = [

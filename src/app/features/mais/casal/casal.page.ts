@@ -4,50 +4,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-mais-casal',
   imports: [RouterLink],
-  template: `
-    <div class="phone-inner">
-      <div class="topbar"><a class="back" routerLink="/mais">‹ Mais</a></div>
-      <div class="screen">
-        <div style="padding:0 16px"><p class="eyebrow">Ficha da gestação</p><h1 style="margin-top:4px">Dados do casal</h1></div>
-        <p class="section-title">Gestante</p>
-        <div class="card kv">
-          <div><p class="k">Nome</p><p class="v">Patrícia Regina B. Moura</p></div>
-          <div><p class="k">Idade</p><p class="v">36 anos</p></div>
-          <div><p class="k">Profissão</p><p class="v">PMDF</p></div>
-          <div><p class="k">Religião</p><p class="v">Católica</p></div>
-          <div><p class="k">Estado civil</p><p class="v">Casada</p></div>
-          <div><p class="k">Tipo sanguíneo</p><p class="v">A+</p></div>
-        </div>
-        <p class="section-title">Histórico obstétrico</p>
-        <div class="card kv">
-          <div><p class="k">G</p><p class="v">6</p></div>
-          <div><p class="k">PN</p><p class="v">3</p></div>
-          <div><p class="k">PC</p><p class="v">2</p></div>
-          <div><p class="k">A</p><p class="v">0</p></div>
-          <div style="grid-column:span 2"><p class="muted">G4 foi gemelar</p></div>
-        </div>
-        <p class="section-title">Dados da gestação</p>
-        <div class="card kv">
-          <div><p class="k">DUM</p><p class="v">01/01/2026</p></div>
-          <div><p class="k">DPP</p><p class="v">08/10/2026</p></div>
-          <div style="grid-column:span 2"><p class="k">1ª USG</p><p class="v">20/02/2026 · 7+1</p></div>
-        </div>
-        <p class="section-title">Parceiro(a)</p>
-        <div class="card kv">
-          <div><p class="k">Nome</p><p class="v">Victor Magalhães</p></div>
-          <div><p class="k">Idade</p><p class="v">38 anos</p></div>
-          <div><p class="k">Religião</p><p class="v">Católico</p></div>
-          <div><p class="k">Tipo sanguíneo</p><p class="v">A+</p></div>
-        </div>
-        <p class="section-title">História prévia / gestações anteriores</p>
-        <div class="card">
-          <p>G4: gemelar mono/di</p>
-          <p>Hipotireoidismo</p>
-          <p>G1 e G2: cesarianas</p>
-          <p>G3 e G4: parto normal, sem intercorrências</p>
-        </div>
-      </div>
-    </div>
-  `,
+  templateUrl: './casal.page.html',
 })
 export class MaisCasal {}

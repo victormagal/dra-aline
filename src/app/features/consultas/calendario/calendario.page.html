@@ -1,0 +1,37 @@
+<header class="head">
+  <p class="eyebrow">Consultas</p>
+  <h1>Calendário da gestação</h1>
+</header>
+
+<main class="content">
+  <nav class="seg">
+    <a routerLink="/consultas/calendario" routerLinkActive="active">Calendário</a>
+    <a routerLink="/consultas/acompanhamento" routerLinkActive="active">Acompanhamento</a>
+  </nav>
+
+  <section class="card">
+    <p class="label">Regra de acompanhamento</p>
+    <div class="rule">
+      <span class="dot" style="background: var(--brand-primary)"></span>
+      <div><p class="t">Até 30 semanas</p><p class="s">Consultas mensais</p></div>
+    </div>
+    <div class="rule">
+      <span class="dot" style="background: var(--magenta)"></span>
+      <div><p class="t">32 a 36 semanas</p><p class="s">Consultas quinzenais</p></div>
+    </div>
+    <div class="rule">
+      <span class="dot" style="background: var(--ok)"></span>
+      <div><p class="t">A partir de 37 semanas</p><p class="s">Consultas semanais até o parto</p></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <p class="label">Próximas consultas</p>
+    <p class="body medium">Nenhuma consulta agendada no momento.</p>
+  </section>
+
+  <section class="card">
+    <p class="label">Atenção</p>
+    <p class="body">Ao final da consulta, deixe a próxima agendada para não ter problemas com indisponibilidade de agenda.</p>
+  </section>
+</main>
