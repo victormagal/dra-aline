@@ -4,7 +4,30 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-ultra-ultrassons',
   imports: [RouterLink, RouterLinkActive],
-  templateUrl: './ultrassons.page.html',
+  styleUrl: '../ultra.scss',
+  template: `
+    <header class="head">
+      <p class="eyebrow">Ultrassonografias</p>
+      <h1>Linha do tempo</h1>
+    </header>
+
+    <main class="content">
+      <nav class="seg">
+        <a routerLink="/ultra/ultrassons" routerLinkActive="active">Ultrassons</a>
+        <a routerLink="/ultra/curva" routerLinkActive="active">Curva de crescimento</a>
+      </nav>
+
+      @for (u of items; track u.date) {
+        <section class="card">
+          <div class="top">
+            <span class="date">{{ u.date }}</span>
+            <span class="chip">{{ u.ig }}</span>
+          </div>
+          <p class="body">{{ u.text }}</p>
+        </section>
+      }
+    </main>
+  `,
 })
 export class UltraUltrassons {
   items = [

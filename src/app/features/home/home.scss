@@ -59,7 +59,7 @@
 }
 .sub { font-size: 14px; font-weight: 500; color: var(--text); }
 
-.btn {
+.hcard-btn {
   display: block;
   padding: 14px 16px;
   border-radius: 14px;
@@ -90,6 +90,6 @@
 .state.warn { background: rgba(138, 47, 92, 0.16); color: var(--brand-primary); }
 
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.field span { display: block; }
-.field .k { font-size: 11px; color: var(--muted); }
-.field .v { font-size: 15px; font-weight: 500; color: var(--text); margin-top: 2px; }
+.pair-item span { display: block; }
+.pair-item .k { font-size: 11px; color: var(--muted); }
+.pair-item .v { font-size: 15px; font-weight: 500; color: var(--text); margin-top: 2px; }

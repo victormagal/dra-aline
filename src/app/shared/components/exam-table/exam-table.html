@@ -1,0 +1,8 @@
+<section class="tcard">
+  <div class="trow thead"><span>Exame</span><span>Resultado</span></div>
+  @for (r of rows(); track r.exame) {
+    <div class="trow">
+      <span>{{ r.exame }}</span><span>{{ r.valor }}</span>
+    </div>
+  }
+</section>

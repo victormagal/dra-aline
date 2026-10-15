@@ -9,22 +9,23 @@
     <a routerLink="/exames/resultados" routerLinkActive="active">Resultados</a>
   </nav>
 
-  <nav class="tri">
-    <span class="active">1º tri</span>
-    <span>2º tri</span>
-    <span>3º tri</span>
+  <nav class="tri" role="tablist">
+    @for (t of trimestres; track t.label; let i = $index) {
+      <button
+        type="button"
+        role="tab"
+        [class.active]="selected() === i"
+        [attr.aria-selected]="selected() === i"
+        (click)="selected.set(i)"
+      >{{ t.label }}</button>
+    }
   </nav>
 
-  <section class="tcard">
-    <div class="trow thead"><span>Exame</span><span>1º tri</span><span>2º tri</span><span>3º tri</span></div>
-    @for (r of rows; track r[0]) {
-      <div class="trow">
-        <span>{{ r[0] }}</span><span>{{ r[1] }}</span><span>{{ r[2] }}</span><span>{{ r[3] }}</span>
-      </div>
-    }
-  </section>
+  <app-exam-table [rows]="atual().rows" />
 
-  <section class="card">
-    <p class="obs">Alguns exames do 3º trimestre foram refeitos em 04/09/2026.</p>
-  </section>
+  @if (atual().observacao; as obs) {
+    <section class="card">
+      <p class="obs">{{ obs }}</p>
+    </section>
+  }
 </main>
