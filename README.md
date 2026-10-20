@@ -1,60 +1,44 @@
-# DraAline
+# Dra. Aline
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.40.
+Next.js App Router application using React, TypeScript, CSS Modules, and Recharts.
+This replaces the Angular application; the previous implementation remains in
+the repository's Git history.
 
-## Development server
+## Local development
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Use Node.js 20.9 or newer and npm.
 
 ```bash
-ng generate component component-name
+npm ci
+npm run dev
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Open http://localhost:3000. The root URL redirects to `/inicio`.
+Application routes live in `src/app`, shared components in `src/components`,
+and public assets in `public`.
+
+## Checks
 
 ```bash
-ng generate --help
+npm run lint
+npm run build
 ```
 
-## Building
+The production build includes TypeScript checking. The Google fonts configured
+in `src/app/layout.tsx` require network access during the build.
 
-To build the project run:
+## Production
 
 ```bash
-ng build
+npm ci
+npm run build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Deploy using the Next.js preset on a compatible hosting provider, or run the
+commands above on a Node.js server. Replace any previous Angular build command
+and `dist` output-directory settings. This project uses Next.js server redirects
+and is not configured as a static export for GitHub Pages.
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# dra-aline
+The `dev` branch contains the migration. Copying the application does not change
+the hosting provider's production branch or deploy it automatically.
