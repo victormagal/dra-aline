@@ -1,0 +1,18 @@
+.tcard { background: var(--white); border-radius: 20px; padding: 10px; }
+.trow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 11px 4px;
+  align-items: start;
+}
+.thead {
+  padding: 6px 4px 8px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--brand-primary);
+  text-transform: uppercase;
+}
+.trow > span { font-size: 11px; color: var(--text); }
+.trow > span:first-child { font-weight: 500; }
+.trow + .trow { border-top: 1px solid #f3e9ee; }

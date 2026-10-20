@@ -1,0 +1,84 @@
+.head { padding: 28px 16px 8px; display: flex; flex-direction: column; gap: 4px; }
+.head h1 { font-size: 32px; line-height: 1; color: var(--text); }
+.eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--brand-primary);
+}
+
+.content {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 8px 16px calc(var(--safe-bottom) + 96px);
+}
+
+.card {
+  margin: 0; background: var(--white); border-radius: 20px; padding: 18px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.label {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--brand-primary);
+}
+.body { font-size: 14px; color: var(--text); }
+.note { font-size: 12px; font-weight: 500; color: var(--muted); }
+.muted { color: var(--muted); }
+
+/* Menu (Mais) */
+.item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px 14px 14px;
+  background: var(--white); border-radius: 20px;
+}
+.icon {
+  width: 40px; height: 40px; border-radius: 20px; flex: none;
+  background: var(--soft); color: var(--brand-primary);
+  display: grid; place-items: center;
+  font-size: 15px; font-weight: 700;
+}
+.texts { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.t { font-size: 15px; font-weight: 700; color: var(--text); }
+.s { font-size: 12px; color: var(--muted); }
+.chev { font-size: 22px; font-weight: 500; color: var(--muted); }
+
+/* Dados do casal */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pairFull { grid-template-columns: 1fr; }
+.fld { display: flex; flex-direction: column; gap: 2px; }
+.fld .k { font-size: 11px; color: var(--muted); }
+.fld .v { font-size: 15px; font-weight: 500; color: var(--text); }
+
+.tiles { display: flex; gap: 8px; }
+.tile {
+  flex: 1; min-width: 0; background: var(--soft); border-radius: 14px; padding: 10px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.tile .k {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--muted);
+}
+.tile .v {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 700; font-size: 24px; line-height: 1.1; color: var(--text);
+}
+
+.lines { display: flex; flex-direction: column; gap: 10px; }
+.lines p { font-size: 14px; color: var(--text); }
+
+/* Chips de estado */
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.state {
+  display: inline-flex; align-items: center;
+  padding: 5px 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; white-space: nowrap;
+}
+.ok { background: rgba(79, 138, 103, 0.16); color: var(--ok); }
+.warn { background: rgba(183, 121, 31, 0.16); color: var(--warn); }
+.primary { background: rgba(138, 47, 92, 0.16); color: var(--brand-primary); }
+.muted-state { background: rgba(122, 100, 113, 0.16); color: var(--muted); }
+
+/* Calendário vacinal */
+.vtop { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.vname {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 700; font-size: 22px; line-height: 1.2; color: var(--text);
+}
+.vnote { font-size: 13px; }
