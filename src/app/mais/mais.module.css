@@ -82,3 +82,24 @@
   font-weight: 700; font-size: 22px; line-height: 1.2; color: var(--text);
 }
 .vnote { font-size: 13px; }
+
+/* Menu: uma coluna no celular; duas colunas no tablet e desktop (como no Figma) */
+.menu { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-items: start; }
+
+@media (min-width: 768px) {
+  .head { padding: 28px 40px 8px; }
+  .content { padding: 8px 40px calc(var(--safe-bottom) + 96px); }
+  .menu { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .content { padding: 8px 40px 40px; }
+}
+
+/* Telas de detalhe: duas colunas no tablet e desktop; blocos "full" ocupam a largura toda (como no Figma) */
+.duas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-items: start; }
+.full { grid-column: 1 / -1; }
+
+@media (min-width: 768px) {
+  .duas { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}

@@ -38,7 +38,7 @@ export default function UltraCurva() {
 
         <section className={styles.card}>
           <p className={styles.label}>Medições</p>
-          <div className={styles.cells}>
+          <div className={`${styles.cells} ${styles.cellsStack}`}>
             {medicoes.map((m) => (
               <div key={m.label} className={styles.cell}>
                 <span className={styles.k}>{m.label}</span>

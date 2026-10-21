@@ -25,6 +25,7 @@ export default function ConsultasAcompanhamento() {
           </NavLink>
         </nav>
 
+        <div className={styles.duas}>
         {consultas.map((c) => (
           <section key={c.date} className={styles.card}>
             <div className={styles.top}>
@@ -49,6 +50,7 @@ export default function ConsultasAcompanhamento() {
           <p className={styles.label}>Próxima consulta</p>
           <p className={`${styles.body} ${styles.medium} ${styles.bodyLg}`}>A agendar</p>
         </section>
+        </div>
       </main>
     </>
   );

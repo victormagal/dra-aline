@@ -19,6 +19,7 @@ export default function Home() {
       </header>
 
       <main className={styles.content}>
+        <div className={styles.duas}>
         <section className={styles.hcard}>
           <p className={styles.label}>Próxima consulta</p>
           <p className={styles.title}>Consulta pós-parto</p>
@@ -39,6 +40,8 @@ export default function Home() {
             <span className={`${styles.state} ${styles.warn}`}>Pendente</span>
           </div>
         </section>
+
+        </div>
 
         <section className={styles.hcard}>
           <p className={styles.label}>Bebê</p>

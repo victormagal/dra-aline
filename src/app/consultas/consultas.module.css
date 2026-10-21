@@ -64,3 +64,16 @@
 }
 .v { font-size: 14px; font-weight: 500; color: var(--text); }
 .muted { color: var(--muted); }
+
+/* Celular: seções empilhadas. Tablet e desktop: Regra e Próximas lado a lado (como no Figma) */
+.duas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-items: start; }
+
+@media (min-width: 768px) {
+  .head { padding: 28px 40px 8px; }
+  .content { padding: 8px 40px calc(var(--safe-bottom) + 96px); }
+  .duas { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .content { padding: 8px 40px 40px; }
+}

@@ -19,6 +19,7 @@ export default function ConsultasCalendario() {
           </NavLink>
         </nav>
 
+        <div className={styles.duas}>
         <section className={styles.card}>
           <p className={styles.label}>Regra de acompanhamento</p>
           <div className={styles.rule}>
@@ -48,6 +49,7 @@ export default function ConsultasCalendario() {
           <p className={styles.label}>Próximas consultas</p>
           <p className={`${styles.body} ${styles.medium}`}>Nenhuma consulta agendada no momento.</p>
         </section>
+        </div>
 
         <section className={styles.card}>
           <p className={styles.label}>Atenção</p>

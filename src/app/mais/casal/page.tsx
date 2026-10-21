@@ -9,6 +9,7 @@ export default function MaisCasal() {
       </header>
 
       <main className={styles.content}>
+        <div className={styles.duas}>
         <section className={styles.card}>
           <p className={styles.label}>Gestante</p>
           <div className={styles.pair}>
@@ -59,7 +60,7 @@ export default function MaisCasal() {
           </div>
         </section>
 
-        <section className={styles.card}>
+        <section className={`${styles.card} ${styles.full}`}>
           <p className={styles.label}>História prévia / gestações anteriores</p>
           <div className={styles.lines}>
             <p>G4: gemelar mono/di</p>
@@ -68,6 +69,7 @@ export default function MaisCasal() {
             <p>G3 e G4: parto normal, sem intercorrências</p>
           </div>
         </section>
+        </div>
       </main>
     </>
   );

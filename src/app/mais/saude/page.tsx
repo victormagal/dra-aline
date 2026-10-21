@@ -9,6 +9,7 @@ export default function MaisSaude() {
       </header>
 
       <main className={styles.content}>
+        <div className={styles.duas}>
         <section className={styles.card}>
           <p className={styles.label}>Alergias</p>
           <div className={styles.chips}>
@@ -25,10 +26,11 @@ export default function MaisSaude() {
           </div>
         </section>
 
-        <section className={styles.card}>
+        <section className={`${styles.card} ${styles.full}`}>
           <p className={styles.label}>Em caso de intercorrência, contatar</p>
           <p className={`${styles.body} ${styles.muted}`}>A preencher no cadastro</p>
         </section>
+        </div>
       </main>
     </>
   );

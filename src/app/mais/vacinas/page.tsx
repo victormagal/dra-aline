@@ -19,6 +19,7 @@ export default function MaisVacinas() {
       </header>
 
       <main className={styles.content}>
+        <div className={styles.duas}>
         <section className={styles.card}>
           <p className={styles.body}>
             DTpa (difteria, tétano e coqueluche): aplicar entre 28 e 36 semanas em todas as gestações. A coqueluche
@@ -36,6 +37,7 @@ export default function MaisVacinas() {
             <p className={`${styles.muted} ${styles.vnote}`}>{v.note}</p>
           </section>
         ))}
+        </div>
       </main>
     </>
   );

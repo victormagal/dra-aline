@@ -16,6 +16,7 @@ export default function Mais() {
       </header>
 
       <main className={styles.content}>
+        <div className={styles.menu}>
         {items.map((item) => (
           <Link key={item.route} className={styles.item} href={item.route}>
             <span className={styles.icon}>{item.letter}</span>
@@ -26,6 +27,7 @@ export default function Mais() {
             <span className={styles.chev}>›</span>
           </Link>
         ))}
+        </div>
       </main>
     </>
   );

@@ -102,3 +102,17 @@
   width: 56px;
   height: 56px;
 }
+
+/* Celular: blocos empilhados. Tablet e desktop: Próxima consulta e Pendências lado a lado (como no Figma) */
+.duas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-items: start; }
+
+@media (min-width: 768px) {
+  .hero { padding: 40px 40px 36px; }
+  .status { font-size: 64px; }
+  .content { padding: 24px 40px calc(var(--safe-bottom) + 96px); }
+  .duas { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .content { padding: 24px 40px 40px; }
+}

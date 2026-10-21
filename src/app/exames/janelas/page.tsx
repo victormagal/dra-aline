@@ -19,6 +19,7 @@ export default function ExamesJanelas() {
           </NavLink>
         </nav>
 
+        <div className={styles.duas}>
         <section className={styles.card}>
           <p className={styles.body}>
             Durante a gestação realizamos ao menos 3 avaliações laboratoriais (1º, 2º e 3º trimestre): nutrição,
@@ -58,7 +59,9 @@ export default function ExamesJanelas() {
           </div>
         </section>
 
-        <section className={styles.card}>
+        </div>
+
+        <section className={`${styles.card} ${styles.full}`}>
           <p className={styles.label}>Preparo · TOTG</p>
           <p className={styles.body}>
             Chegar ao laboratório pela manhã, em jejum de 8 a 12 horas. Ingerir 300 ml de dextrosol e coletar nova

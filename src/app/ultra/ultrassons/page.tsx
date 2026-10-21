@@ -28,6 +28,7 @@ export default function UltraUltrassons() {
           </NavLink>
         </nav>
 
+        <div className={styles.duas}>
         {items.map((u) => (
           <section key={u.date} className={styles.card}>
             <div className={styles.top}>
@@ -37,6 +38,7 @@ export default function UltraUltrassons() {
             <p className={styles.body}>{u.text}</p>
           </section>
         ))}
+        </div>
       </main>
     </>
   );
