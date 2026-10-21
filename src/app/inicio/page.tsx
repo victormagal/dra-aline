@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './home.module.css';
 
@@ -5,11 +6,16 @@ export default function Home() {
   return (
     <>
       <header className={styles.hero}>
-        <p className={styles.brand}>Dra. Aline Magalhães</p>
-        <p className={styles.hello}>Olá, Patrícia</p>
-        <h1 className={styles.status}>Pós-parto</h1>
-        <p className={styles.meta}>Bebê nasceu em 01/10/2026 · 12 dias</p>
-        <p className={styles.meta}>Próxima consulta: pós-parto, 19/10/2026</p>
+        <div>
+          <p className={styles.brand}>Dra. Aline Magalhães</p>
+          <p className={styles.hello}>Olá, Patrícia</p>
+          <h1 className={styles.status}>Pós-parto</h1>
+          <p className={styles.meta}>Bebê nasceu em 01/10/2026 · 12 dias</p>
+          <p className={styles.meta}>Próxima consulta: pós-parto, 19/10/2026</p>
+        </div>
+        <div className={styles.topo}>
+          <Image src="/assets/logo-marca-branca.svg" alt="Logotipo Dra. Aline Magalhães" width={56} height={56} unoptimized />
+        </div>
       </header>
 
       <main className={styles.content}>

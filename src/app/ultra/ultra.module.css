@@ -46,6 +46,7 @@
 }
 .mediana { background: rgba(156, 61, 122, 0.16); color: var(--magenta); }
 .faixa { background: rgba(122, 100, 113, 0.16); color: var(--muted); }
+.paciente { background: rgba(138, 47, 92, 0.16); color: var(--brand-primary); }
 
 .chart { width: 100%; height: 380px; }
 

@@ -4,8 +4,8 @@
   background: linear-gradient(90deg, var(--coral) 0%, var(--magenta) 100%);
   color: var(--white);
   display: flex;
-  flex-direction: column;
   gap: 6px;
+  justify-content: space-between;
   overflow: hidden;
 }
 .brand {
@@ -90,3 +90,15 @@
 .pairItem span { display: block; }
 .k { font-size: 11px; color: var(--muted); }
 .v { font-size: 15px; font-weight: 500; color: var(--text); margin-top: 2px; }
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.logo {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+}

@@ -1,12 +1,12 @@
 import NavLink from '../../../components/nav-link/nav-link';
 import styles from '../ultra.module.css';
 import CurvaChart from './curva.chart';
+import { MEDICOES_PACIENTE } from './curva.data';
 
-const medicoes = [
-  { label: '30+1 sem', peso: '1.495 g' },
-  { label: '34+2 sem', peso: '2.466 g' },
-  { label: '36 sem', peso: '2.744 g' },
-];
+const medicoes = MEDICOES_PACIENTE.map((m) => ({
+  label: m.label,
+  peso: `${Math.floor(m.pesoG / 1000)}.${String(m.pesoG % 1000).padStart(3, '0')} g`,
+}));
 
 export default function UltraCurva() {
   return (
@@ -27,10 +27,11 @@ export default function UltraCurva() {
         </nav>
 
         <section className={styles.card}>
-          <p className={styles.label}>Peso estimado fetal (Hadlock)</p>
+          <p className={styles.label}>Peso estimado fetal · referência INTERGROWTH-21st</p>
           <div className={styles.legend}>
             <span className={`${styles.state} ${styles.mediana}`}>Mediana</span>
             <span className={`${styles.state} ${styles.faixa}`}>Faixa P10–P90</span>
+            <span className={`${styles.state} ${styles.paciente}`}>Paciente</span>
           </div>
           <CurvaChart />
         </section>
